@@ -5,7 +5,7 @@ import Admin from "./pages/Admin";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import './index.css'
-import Login from "./pages/login";
+import Login from "./pages/Login";
 
 function App() {
   return (
