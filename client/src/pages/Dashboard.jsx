@@ -41,7 +41,7 @@ export default function Dashboard() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/content", {
+      .get("https://education-app-1-ed4s.onrender.com/api/content", {
         headers: {
           Authorization: localStorage.getItem("token"),
         },
