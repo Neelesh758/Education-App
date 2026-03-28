@@ -33,8 +33,8 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { FileText } from "lucide-react";
-import Navbar from "../Components/Navbar";
-import Footer from "../Components/Footer";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 export default function Dashboard() {
   const [data, setData] = useState([]);
