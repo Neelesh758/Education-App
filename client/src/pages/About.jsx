@@ -1,6 +1,6 @@
 import { BookOpen, Video, FileText } from "lucide-react";
-import Navbar from "../Components/Navbar.jsx";
-import Footer from "../Components/Footer.jsx";
+import Navbar from "../components/Navbar.jsx";
+import Footer from "../components/Footer.jsx";
 
 export default function About() {
   return (
