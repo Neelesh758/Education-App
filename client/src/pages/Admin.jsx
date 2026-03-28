@@ -16,7 +16,7 @@ export default function Admin() {
       formData.append("title", title);
       formData.append("type", type);
 
-      await axios.post("http://localhost:5000/api/content/upload", formData, {
+      await axios.post("https://education-app-1-ed4s.onrender.com/api/content/upload", formData, {
         headers: {
           Authorization: localStorage.getItem("token"),
         },
