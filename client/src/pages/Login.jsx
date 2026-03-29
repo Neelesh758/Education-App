@@ -140,10 +140,7 @@ export default function Login() {
           Login
         </button>
 
-        {/* Optional */}
-        <p className="text-center text-white/70 text-sm mt-4 cursor-pointer hover:text-white">
-          Save your Password
-        </p>
+        
       </div>
     </div>
   );
