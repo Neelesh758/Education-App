@@ -75,6 +75,10 @@ export default function Login() {
       });
 
       localStorage.setItem("token", res.data.token);
+      localStorage.setItem("user", JSON.stringify({
+        name: res.data.name,
+        role: res.data.role
+      }));
 
       if (res.data.role === "teacher") {
         window.location = "/admin";
