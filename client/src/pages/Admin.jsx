@@ -1,6 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import { UploadCloud, FileText, Video, Type } from "lucide-react";
+import { Navigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
@@ -9,6 +10,14 @@ export default function Admin() {
   const [title, setTitle] = useState("");
   const [type, setType] = useState("video");
 
+  // ✅ GET USER FROM LOCAL STORAGE
+  const user = JSON.parse(localStorage.getItem("user"));
+
+  // ✅ PROTECT ROUTE (VERY IMPORTANT)
+  if (!user || user.role !== "teacher") {
+    return <Navigate to="/dashboard" />;
+  }
+
   const uploadFile = async () => {
     try {
       const formData = new FormData();
@@ -16,11 +25,15 @@ export default function Admin() {
       formData.append("title", title);
       formData.append("type", type);
 
-      await axios.post("https://education-app-1-ed4s.onrender.com/api/content/upload", formData, {
-        headers: {
-          Authorization: localStorage.getItem("token"),
-        },
-      });
+      await axios.post(
+        "https://education-app-1-ed4s.onrender.com/api/content/upload",
+        formData,
+        {
+          headers: {
+            Authorization: localStorage.getItem("token"),
+          },
+        }
+      );
 
       alert("Uploaded successfully ✅");
     } catch {
@@ -32,7 +45,7 @@ export default function Admin() {
     <div className="min-h-screen flex flex-col bg-gradient-to-br from-purple-500 to-blue-600">
       
       {/* Navbar */}
-      <Navbar role="teacher" />
+      <Navbar role={user.role} />
 
       {/* Main Content */}
       <div className="flex-grow flex justify-center items-center p-6">
