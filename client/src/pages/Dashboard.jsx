@@ -71,7 +71,7 @@ export default function Dashboard() {
 
               {item.type === "video" ? (
                 <video
-                  src={`http://localhost:5000${item.fileUrl}`}
+                  src={`https://education-app-1-ed4s.onrender.com${item.fileUrl}`}
                   controls
                   className="w-full rounded-lg"
                 />
@@ -79,7 +79,7 @@ export default function Dashboard() {
                 <div className="flex flex-col items-center justify-center h-40 text-white">
                   <FileText size={40} />
                   <a
-                    href={`http://localhost:5000${item.fileUrl}`}
+                    href={`https://education-app-1-ed4s.onrender.com${item.fileUrl}`}
                     target="_blank"
                     rel="noreferrer"
                     className="mt-2 px-4 py-2 bg-white text-purple-600 rounded-lg font-semibold hover:bg-purple-100"
