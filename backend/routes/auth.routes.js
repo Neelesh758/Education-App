@@ -56,7 +56,7 @@ router.post("/login", async (req, res) => {
     "secret"
   );
 
-  res.json({ token, role: user.role });
+  res.json({ token, role: user.role ,name: user.name});
 });
 
 export default router;
